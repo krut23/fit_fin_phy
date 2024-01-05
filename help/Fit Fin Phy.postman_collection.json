@@ -1,0 +1,703 @@
+{
+	"info": {
+		"_postman_id": "6690535b-653f-4433-987d-2f25343fbc2b",
+		"name": "Fit Fin Phy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12747007"
+	},
+	"item": [
+		{
+			"name": "Config",
+			"item": [
+				{
+					"name": "Paid Features",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{API_URL}}config/module-type",
+							"host": [
+								"{{API_URL}}config"
+							],
+							"path": [
+								"module-type"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Advertisements",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{API_URL}}config/advertisements",
+							"host": [
+								"{{API_URL}}config"
+							],
+							"path": [
+								"advertisements"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let d = pm.response.json();\r",
+									"pm.collectionVariables.set('TOKEN', d.data.api_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Kevin Patel",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "kp@mailinator.com",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "8080800800",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "profile_url",
+									"value": "https://randomuser.me/api/portraits/women/59.jpg",
+									"description": "optional",
+									"type": "text"
+								},
+								{
+									"key": "social_id",
+									"value": "7FCDZUifwQNcgTQ3Qujh",
+									"type": "text"
+								},
+								{
+									"key": "fcm_token",
+									"value": "46464dg4sd65g465df4v",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{API_URL}}auth/login",
+							"host": [
+								"{{API_URL}}auth"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{API_URL}}auth/logout",
+							"host": [
+								"{{API_URL}}auth"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Add Click",
+			"item": [
+				{
+					"name": "expense",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{API_URL}}click/expense",
+							"host": [
+								"{{API_URL}}click"
+							],
+							"path": [
+								"expense"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "income",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{API_URL}}click/income",
+							"host": [
+								"{{API_URL}}click"
+							],
+							"path": [
+								"income"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bank",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{API_URL}}click/bank",
+							"host": [
+								"{{API_URL}}click"
+							],
+							"path": [
+								"bank"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "goal",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{API_URL}}click/goal",
+							"host": [
+								"{{API_URL}}click"
+							],
+							"path": [
+								"goal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "budget",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{API_URL}}click/budget",
+							"host": [
+								"{{API_URL}}click"
+							],
+							"path": [
+								"budget"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reports",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{API_URL}}click/reports",
+							"host": [
+								"{{API_URL}}click"
+							],
+							"path": [
+								"reports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "water-remainder",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{API_URL}}click/water-remainder",
+							"host": [
+								"{{API_URL}}click"
+							],
+							"path": [
+								"water-remainder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sleep-remainder",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{API_URL}}click/sleep-remainder",
+							"host": [
+								"{{API_URL}}click"
+							],
+							"path": [
+								"sleep-remainder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "medicine-reminder",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{API_URL}}click/medicine-reminder",
+							"host": [
+								"{{API_URL}}click"
+							],
+							"path": [
+								"medicine-reminder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "heart-rate-monitor",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{API_URL}}click/heart-rate-monitor",
+							"host": [
+								"{{API_URL}}click"
+							],
+							"path": [
+								"heart-rate-monitor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "task-manager",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{API_URL}}click/task-manager",
+							"host": [
+								"{{API_URL}}click"
+							],
+							"path": [
+								"task-manager"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "habit-manager",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{API_URL}}click/habit-manager",
+							"host": [
+								"{{API_URL}}click"
+							],
+							"path": [
+								"habit-manager"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "step-counter",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{API_URL}}click/expense",
+							"host": [
+								"{{API_URL}}click"
+							],
+							"path": [
+								"expense"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "calorie-and-distance",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{API_URL}}click/expense",
+							"host": [
+								"{{API_URL}}click"
+							],
+							"path": [
+								"expense"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{TOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_URL",
+			"value": "http://localhost/projects/prayosha/fit-fin-phy/api/",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "API_URL",
+			"value": "https://prayosha.info/fit-fin-phy/api/",
+			"type": "string"
+		},
+		{
+			"key": "TOKEN",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

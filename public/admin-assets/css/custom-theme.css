@@ -1,0 +1,94 @@
+/*:root {
+    --theme-primary: #0cc2aa
+}*/
+
+body {
+    color: rgba(0, 0, 0, 0.87);
+    /*font-size: 0.875rem;*/
+    background-color: #f0f0f0 !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+.custom-login .card {
+    box-shadow: 0 0px 20px 0px rgba(0, 0, 0, 0.60), 0 -1px 0px rgba(0, 0, 0, 0.02) !important;
+}
+
+
+.btn-primary {
+    color: rgba(255, 255, 255, 0.87) !important;
+    background-color: #0cc2aa !important;
+    border-color: #0cc2aa !important;
+}
+
+.btn-check:focus + .btn-primary, .btn-primary:focus, .btn-primary:hover {
+    box-shadow: 0 4px 11px rgba(12, 194, 170, .35);
+}
+
+.navbar.navbar-container {
+    box-shadow: none !important;
+}
+
+.navbar-vertical-fixed .navbar-vertical-footer-offset {
+    box-shadow: none !important;
+}
+
+.card {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border-color: #dfdfdf !important;
+}
+
+.navbar-vertical-container {
+    background-color: #2E3E4E !important;
+    color: #fff;
+}
+
+.nav-link {
+    color: #fff !important;
+    /*background-color: rgba(189,197,209,.2);*/
+}
+
+
+.nav-vertical.nav-pills .nav-collapse::before {
+    background-color: transparent !important;
+}
+
+.nav-vertical.nav-pills .nav-item .nav-link:hover, .nav-vertical.nav-pills .nav-item .nav-link[aria-expanded]:hover, .nav-vertical.nav-pills .nav-collapse .nav-link:hover {
+    border-radius: 0 !important;
+}
+
+.navbar-brand .text-secondary {
+    color: #0CC2AA!important;
+}
+
+.form-control-sm {
+    /*min-height: calc(1.5em + 1.125rem);*/
+    /*padding: 0.5rem 1rem;*/
+    /*font-size: .8125rem;*/
+    border-radius: 0 !important;
+}
+
+.navbar-brand-logo {
+    max-width: 10rem !important
+}
+
+.nav-vertical.nav-pills .nav-item .nav-collapse.show .nav-link.active {
+    border-radius: 0 !important;
+    background-color: #0CC2AA!important;
+}
+
+.nav-vertical.nav-pills .nav-link.active {
+    border-radius: 0 !important;
+    background-color: #0CC2AA!important;
+}
+
+.nav-pills .nav-link:hover {
+    /*color: #132144;*/
+    background-color: rgba(12, 194, 170, 0.57) !important;
+}
+/*
+.navbar {
+    box-shadow: 12px 7px 13px -3px #7f8696 !important;
+}
+*/

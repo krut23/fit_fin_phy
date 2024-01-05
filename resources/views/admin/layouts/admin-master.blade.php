@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="rootCtrl">
+<head>
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="token" content="{{ csrf_token() }}">
+
+    <!-- Title -->
+    <title>@yield('title') | {{env('APP_NAME')}}</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{asset('favicon.png')}}">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="{{getAsset('vendor/bootstrap-icons/font/bootstrap-icons.css')}}">
+
+    @yield('style')
+
+    <!-- CSS Front Template -->
+    <link rel="preload" href="{{getAsset('css/theme.min.css')}}" data-hs-appearance="default" as="style">
+    <link rel="preload" href="{{getAsset('css/theme-dark.min.css')}}" data-hs-appearance="dark" as="style">
+
+
+    <!-- Page Css -->
+    {{-- <link rel="stylesheet" href="../assets/vendor/tom-select/dist/css/tom-select.bootstrap5.css">--}}
+    {{-- <link rel="stylesheet" href="{{getAsset('vendor/tom-select/dist/css/tom-select.bootstrap5.css')}}"> --}}
+    {{-- <link rel="stylesheet" href="{{getAsset('vendor/flatpickr/dist/flatpickr.min.css')}}"> --}}
+    <link href="{{getAsset('css/custom.css')}}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{getAsset('fonts/fontawesome_pro_v6/css/all.css')}}">
+    {{-- <link rel="stylesheet" href="{{getAsset('vendor/tom-select/dist/css/tom-select.bootstrap5.css')}}"> --}}
+
+
+    <style data-hs-appearance-onload-styles>
+        * {transition: unset !important;}
+        body {opacity: 0;}
+    </style>
+
+    <!-- Configuration script -->
+    @include('admin.includes.header-config-script')
+    <!-- Configuration script end -->
+
+    <!-- Angular js --------------------------------------------------------------------------->
+    <!-- Sortable -->
+{{-- REQUIRED IN ANGULAR-JS   <script data-require="jquery@*" data-semver="2.0.3" src="{{getAsset('angularjs/libs/sortable/jquery-2.0.3.min.js')}}"></script>--}}
+    <!-- Jquery Ui -->
+{{-- REQUIRED IN ANGULAR-JS    <script src="{{asset('resources/angularjs/libs/sortable/jquery-ui.min.js')}}"></script>--}}
+
+    <!-- Angular Js -->
+    <script src="{{asset('resources/angularjs/libs/angular.js')}}"></script>
+    <!-- Cookie -->
+{{-- REQUIRED IN ANGULAR-JS   <!-- <script src="{{asset('resources/angularjs/libs/angular-cookie.js')}}"></script> -->--}}
+    <!-- Toaster -->
+    <link rel="stylesheet" type="text/css" href="{{asset('resources/angularjs/libs/toaster/toastr.min.css')}}">
+    <!-- Sanitize -->
+    <script src="{{asset('resources/angularjs/libs/sanitize/angular-sanitize.min.js')}}"></script>
+    <!-- Dropzone -->
+{{-- REQUIRED IN ANGULAR-JS   <script src="{{asset('resources/angularjs/libs/dropzone/dropzone.js')}}"></script>--}}
+{{-- REQUIRED IN ANGULAR-JS   <link rel="stylesheet" href="{{asset('resources/angularjs/libs/dropzone/dropzone.css')}}">--}}
+    <!-- ngDropzone -->
+{{-- REQUIRED IN ANGULAR-JS   <script src="{{asset('resources/angularjs/libs/dropzone/ng-dropzone.js')}}"></script>--}}
+
+    <!-- Misc -->
+{{-- REQUIRED IN ANGULAR-JS   <link rel="stylesheet" href="{{asset('resources/angularjs/libs/dropzone/ng-dropzone.css')}}">--}}
+
+</head>
+
+<body class="has-navbar-vertical-aside navbar-vertical-aside-show-xl navbar-vertical-aside-closed-mode">
+
+
+<div class="preloader" id="preloader">
+    <div class="loading" aria-busy="true" aria-label="Loading, please wait." role="progressbar">
+        <img class="icon" src="{{getAsset('img/loader-gear.png')}}">
+    </div>
+</div>
+<div class="preloader" ng-show="isLoaderShow">
+    <div class="loading" aria-busy="true" aria-label="Loading, please wait." role="progressbar">
+        <img class="icon" src="{{getAsset('img/loader-gear.png')}}">
+    </div>
+</div>
+
+
+
+
+
+    <script src="{{getAsset('js/hs.theme-appearance.js')}}"></script>
+
+    <!-- ========== MAIN CONTENT ========== -->
+
+    <!-- ========== HEADER ========== -->
+    @include('admin.includes.header')
+    <!-- ========== END HEADER ========== -->
+
+    <!-- ========== SIDEBAR ========== -->
+    @include('admin.includes.sidebar')
+    <!-- ========== END SIDEBAR ========== -->
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="content" role="main" class="main main-content-body d-none " ng-controller="PageCtrl">
+        @yield('content')
+    </main>
+    <!-- ========== END MAIN CONTENT ========== -->
+
+    <!-- Hidden Get Route-->
+    @if (!empty($viewData))
+    <textarea type="text" id="encodedViewData" hidden>{{$viewData}}</textarea>
+    @endif
+
+    <input type="hidden" id="isAdminViewData" value="{{Auth::user()->is_admin}}" ></input>
+
+
+    <!-- ========== SECONDARY CONTENTS ========== -->
+    @yield('secondaryContents')
+    <!-- ========== END SECONDARY CONTENTS ========== -->
+
+
+
+
+
+
+
+    <!-- JS Global Compulsory  -->
+    <script src="{{getAsset('js/vendor.min.js')}}"></script>
+    <script src="{{getAsset('vendor/jquery/dist/jquery.min.js')}}"></script>
+    {{-- <script src="{{getAsset('vendor/jquery-migrate/dist/jquery-migrate.min.js')}}"></script> --}}
+    {{-- <script src="{{getAsset('vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script> --}}
+
+    <!-- JS Implementing Plugins -->
+    {{-- <script src="{{getAsset('vendor/hs-navbar-vertical-aside/dist/hs-navbar-vertical-aside.min.js')}}"></script> --}}
+    {{-- <script src="{{getAsset('vendor/hs-form-search/dist/hs-form-search.min.js')}}"></script> --}}
+    {{-- <script src="{{getAsset('vendor/tom-select/dist/js/tom-select.complete.min.js')}}"></script> --}}
+    {{-- <script src="{{getAsset('vendor/flatpickr/dist/flatpickr.min.js')}}"></script> --}}
+
+    <!-- JS Front -->
+    <script src="{{getAsset('js/theme.min.js')}}"></script>
+    <script src="{{getAsset('js/theme-custom.js')}}"></script>
+
+
+
+    <!-- Style Switcher JS -->
+    @include('admin.includes.footer-config-script')
+    <!-- End Style Switcher JS -->
+
+    <!-- AngularJs -->
+    <script src="{{asset('resources/angularjs/libs/sweet-alert/sweetalert.min.js')}}"></script>
+    <script src="{{asset('resources/angularjs/libs/toaster/toastr.min.js')}}"></script>
+{{--    <script src="{{asset('resources/angularjs/libs/sortable/sortable.js')}}"></script>--}}
+    <script src="{{asset('resources/angularjs/libs/moment/moment.min.js')}}"></script>
+{{--    <script src='https://cdn.ckeditor.com/4.5.3/full/ckeditor.js'></script>--}}
+    <script src="{{asset('resources/angularjs/libs/wysiwyg-editor/wysiwyg-angular.min.js')}}"></script>
+{{--    <script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.1.2/textAngular.min.js'></script>--}}
+    <script src="{{asset('resources/angularjs/app.js')}}"></script>
+    {{--<!-- <script src="{{asset('resources/angularjs/helpers/helperConfiguration.js')}}"></script> -->--}}
+    <script src="{{asset('resources/angularjs/helpers/helperServices.js')}}"></script>
+    <script src="{{asset('resources/angularjs/helpers/helperDirective.js')}}"></script>
+    <script src="{{asset('resources/angularjs/helpers/helperFactory.js')}}"></script>
+    <script src="{{asset('resources/angularjs/helpers/helperFilter.js')}}"></script>
+    {{--<script src="{{asset('resources/angularjs/dropzoneCtrl.js')}}"></script>--}}
+    <script src="{{asset('resources/angularjs/rootCtrl.js')}}"></script>
+    @yield('script')
+
+</body>
+</html>
