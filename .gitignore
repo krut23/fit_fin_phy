@@ -46,6 +46,6 @@ Thumbs.db
 *.flv
 *.mov
 *.wmv
-
+.env
 vendor/
 .zip
